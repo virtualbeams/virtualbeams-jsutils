@@ -56,18 +56,32 @@
 		array.insert(index, item);
 	};
 
-	Array.create = function(length) {
-		var arr = new Array(length || 0);
-		i = length;
+	Array.create = function(dimensions, value) {
+    // Create new array
+    var array = new Array(dimensions[0] || 0);
+    var i = dimensions[0];
 
-		if(arguments.length > 1) {
-			var args = Array.prototype.slice.call(arguments, 1);
-			while(i--) {
-				arr[length - 1 - i] = Array.create.apply(this, args);
-			}
-		}
+    // If dimensions array's length is bigger than 1
+    // we start creating arrays in the array elements with recursions
+    // to achieve multidimensional array
+    if (dimensions.length > 1) {
+	    // Remove the first value from the array
+	    var args = Array.prototype.slice.call(dimensions, 1);
+	    // For each index in the created array create a new array with recursion
+	    while(i--) {
+	        array[dimensions[0]-1 - i] = Array.create(args, value);
+	    }
+    // If there is only one element left in the dimensions array
+    // assign value to each of the new array's elements if value is set as param
+    } else {
+      if (typeof value !== 'undefined') {
+        while(i--) {
+            array[dimensions[0]-1 - i] = value;
+        }
+      }
+    }
 
-		return arr;
+    return array;
 	};
 
 })();
