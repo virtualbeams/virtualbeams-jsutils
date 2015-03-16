@@ -56,6 +56,14 @@
 		array.insert(index, item);
 	};
 
+	Array.prototype.first = function () {
+	  return this[0];
+	};
+
+	Array.prototype.last = function () {
+	  return this[this.length - 1];
+	};
+
 	Array.create = function(dimensions, value) {
     // Create new array
     var array = new Array(dimensions[0] || 0);
