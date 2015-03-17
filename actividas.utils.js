@@ -48,6 +48,28 @@
 		return option.randomLimit(size);
 	};
 
+	Array.prototype.removeFirstItem = function (item) {
+	  var pos = this.indexOf(item);
+	  if (pos > -1) {
+	    this.splice(pos, 1);
+	  }
+	};
+
+	Array.prototype.removeLastItem = function (item) {
+	  var pos = this.lastIndexOf(item);
+	  if (pos > -1) {
+	    this.splice(pos, 1);
+	  }
+	};
+
+	Array.prototype.removeAllItems = function (item) {
+	  for (var i = this.length - 1; i >= 0; i--) {
+	    if (this[i] == item) {
+	      this.splice(i, 1);
+	    }
+	  }
+	};
+
 	Array.prototype.insert = function(index, item){
 		this.splice(index, 0, item);
 	};
