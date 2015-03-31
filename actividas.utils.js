@@ -48,6 +48,14 @@
 		return option.randomLimit(size);
 	};
 
+	String.prototype.contains = function(contain) {
+		return this.indexOf(contain) != -1;
+	};
+	
+	String.contains = function(str, contain) {
+		return str.contains(contain);
+	};
+
 	Array.prototype.removeFirstItem = function (item) {
 	  var pos = this.indexOf(item);
 	  if (pos > -1) {
