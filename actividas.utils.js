@@ -94,6 +94,10 @@
 	  return this[this.length - 1];
 	};
 
+	Array.prototype.contains = function(contain) {
+		return this.indexOf(contain) != -1;
+	};
+
 	Array.create = function(dimensions, value) {
     // Create new array
     var array = new Array(dimensions[0] || 0);
