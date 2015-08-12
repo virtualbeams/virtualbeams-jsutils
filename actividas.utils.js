@@ -13,7 +13,7 @@
 		/// <returns type="String"></returns>
 		var theString = this.toString();
 		var arreglo = [];
-		if (arguments > 1) {
+		if (arguments.length > 1) {
 			arreglo = arguments;
 		} else {
 			if (Array.isArray(array)) {
