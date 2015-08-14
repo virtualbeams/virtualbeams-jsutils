@@ -65,6 +65,14 @@
 		return str.contains(contain);
 	};
 
+	Date.prototype.randomLimit = function (end) {
+		return new Date(this.getTime() + Math.random() * (end.getTime() - this.getTime()));
+	};
+
+	Date.randomLimit = function (start, end) {
+		return start.randomDate(end);
+	};
+
 	Array.prototype.removeFirstItem = function (item) {
 		var pos = this.indexOf(item);
 		if (pos > -1) {
