@@ -70,7 +70,7 @@
 	};
 
 	Date.randomLimit = function (start, end) {
-		return start.randomDate(end);
+		return start.randomLimit(end);
 	};
 
 	Array.prototype.removeFirstItem = function (item) {
