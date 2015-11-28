@@ -60,7 +60,7 @@
 	String.prototype.contains = function(contain) {
 		return this.indexOf(contain) != -1;
 	};
-	
+
 	String.contains = function(str, contain) {
 		return str.contains(contain);
 	};
@@ -143,4 +143,15 @@
 		return array;
 	};
 
+	Object.values = function (obj) {
+		var list = [];
+
+		for (var value in obj) {
+			if (Object.prototype.hasOwnProperty.call(obj, value)) {
+				list.push(obj[value]);
+			}
+		}
+
+		return list;
+	};
 })();
