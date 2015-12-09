@@ -65,6 +65,12 @@
 		return str.contains(contain);
 	};
 
+	String.prototype.startsWith = function (str, pos) {
+		pos = pos | 0;
+
+		return this.slice(pos, str.length + pos) === str;
+	};
+
 	Date.prototype.randomLimit = function (end) {
 		return new Date(this.getTime() + Math.random() * (end.getTime() - this.getTime()));
 	};
