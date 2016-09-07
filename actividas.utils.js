@@ -79,47 +79,75 @@
 		return start.randomLimit(end);
 	};
 
-	Array.prototype.removeFirstItem = function (item) {
-		var pos = this.indexOf(item);
-		if (pos > -1) {
-			this.splice(pos, 1);
-		}
-	};
+  Object.defineProperty(Array.prototype, 'removeFirstItem', {
+    configurable: false,
+    enumerable: false,
+    value: function (item) {
+      var pos = this.indexOf(item);
+  		if (pos > -1) {
+  			this.splice(pos, 1);
+  		}
+    }
+  });
 
-	Array.prototype.removeLastItem = function (item) {
-		var pos = this.lastIndexOf(item);
-		if (pos > -1) {
-			this.splice(pos, 1);
-		}
-	};
+  Object.defineProperty(Array.prototype, 'removeLastItem', {
+    configurable: false,
+    enumerable: false,
+    value: function (item) {
+      var pos = this.lastIndexOf(item);
+  		if (pos > -1) {
+  			this.splice(pos, 1);
+  		}
+    }
+  });
 
-	Array.prototype.removeAllItems = function (item) {
-		for (var i = this.length - 1; i >= 0; i--) {
-			if (this[i] == item) {
-				this.splice(i, 1);
-			}
-		}
-	};
+  Object.defineProperty(Array.prototype, 'removeAllItems', {
+    configurable: false,
+    enumerable: false,
+    value: function (item) {
+      for (var i = this.length - 1; i >= 0; i--) {
+  			if (this[i] == item) {
+  				this.splice(i, 1);
+  			}
+  		}
+    }
+  });
 
-	Array.prototype.insert = function(index, item){
-		this.splice(index, 0, item);
-	};
+  Object.defineProperty(Array.prototype, 'insert', {
+    configurable: false,
+    enumerable: false,
+    value: function (index, item) {
+      this.splice(index, 0, item);
+    }
+  });
 
 	Array.insert = function(array, index, item){
 		array.insert(index, item);
 	};
 
-	Array.prototype.first = function () {
-		return this[0];
-	};
+  Object.defineProperty(Array.prototype, 'first', {
+    configurable: false,
+    enumerable: false,
+    value: function () {
+      return this[0];
+    }
+  });
 
-	Array.prototype.last = function () {
-		return this[this.length - 1];
-	};
+  Object.defineProperty(Array.prototype, 'last', {
+    configurable: false,
+    enumerable: false,
+    value: function () {
+      return this[this.length - 1];
+    }
+  });
 
-	Array.prototype.contains = function(contain) {
-		return this.indexOf(contain) != -1;
-	};
+  Object.defineProperty(Array.prototype, 'contains', {
+    configurable: false,
+    enumerable: false,
+    value: function (contain) {
+      return this.indexOf(contain) != -1;
+    }
+  });
 
 	Array.create = function(dimensions, value) {
 		// Create new array
