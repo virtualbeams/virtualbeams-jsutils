@@ -1,12 +1,13 @@
 {
-  "name": "actividas-utils",
+  "name": "virtualbeams-jsutils",
   "version": "0.1.20",
-  "homepage": "https://github.com/jpablo1012/actividas-utils",
+  "homepage": "https://github.com/virtualbeams/virtualbeams-jsutils.git",
   "authors": [
-    "jpablo1012 <jpablo101296@gmail.com>"
+    "Juan Pablo Lopera <jpablo.Lopera@gvirtualbeams.com>",
+    "VirtualBeams <code@virtualbeams.com>"
   ],
   "description": "A library to facilitate projects with javascript",
-  "main": "actividas.utils.js",
+  "main": "jsutils.js",
   "keywords": [
     "actividas",
     "util",
